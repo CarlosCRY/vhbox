@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -31,9 +32,16 @@ public class Login extends Application {
         TextField inputPass = new TextField();
         VBox.setMargin(inputUser, new Insets(5, 0,20, 0));
         inputPass.setMaxWidth(160);
+        HBox buttons = new HBox();
         Button btEntry = new Button("Entrar");
+        btEntry.setMaxWidth(60);
+        VBox.setMargin(btEntry, new Insets(2, 2,2, 2));
         Button btRegister = new Button("Registrarse");
-        root.getChildren().addAll(labelTitle, labelUser, inputUser, labelPass, inputPass);
+        btRegister.setMaxWidth(60);
+        VBox.setMargin(btRegister, new Insets(2, 2,2, 2));
+        buttons.getChildren().addAll(btEntry, btRegister);
+        buttons.setAlignment(Pos.CENTER);
+        root.getChildren().addAll(labelTitle, labelUser, inputUser, labelPass, inputPass, buttons);
 
         root.setAlignment(Pos.CENTER);
 
